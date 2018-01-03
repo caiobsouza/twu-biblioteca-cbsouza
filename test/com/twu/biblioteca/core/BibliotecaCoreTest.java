@@ -22,12 +22,12 @@ public class BibliotecaCoreTest {
 
     @Test
     public void testListBooks() {
-        String[] books = core.getBooks(0);
+        Book[] books = core.getBooks();
 
         assertNotNull(books);
         assertEquals(2, books.length);
-        assertEquals("Test-Driven Development", books[0]);
-        assertEquals("Head First Java", books[1]);
+        assertEquals("Test-Driven Development", books[0].getTitle());
+        assertEquals("Head First Java", books[1].getTitle());
     }
 
     @Test
