@@ -17,7 +17,7 @@ public class MainMenuTest {
 
     @Test
     public void testMenuOptions(){
-        String[] options = menu.getOptions();
+        String[] options = menu.getMenuOptions();
 
         assertNotNull(options);
         assertEquals(1, options.length);
