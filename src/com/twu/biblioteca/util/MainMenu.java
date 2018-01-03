@@ -29,14 +29,14 @@ public class MainMenu {
         this.currentMenuIndex = currentOptionSelected;
     }
 
-    public int getCurrentMenuIndex(){
+    public int getCurrentMenuIndex() {
         return this.currentMenuIndex;
     }
 
-    public MenuOption chooseOption(int i) throws InvalidMenuOptionException{
+    public MenuOption chooseOption(int i) throws InvalidMenuOptionException {
         int index = handleZeroIndex(i);
 
-        if(index < 0 || index >= this.menuOptions.length)
+        if (isIndexInsideMenuRange(index))
             throw new InvalidMenuOptionException();
 
         this.setCurrentMenuIndex(index);
@@ -44,7 +44,11 @@ public class MainMenu {
         return this.menuOptions[index];
     }
 
-    private int handleZeroIndex(int i){
+    private int handleZeroIndex(int i) {
         return --i;
+    }
+
+    private boolean isIndexInsideMenuRange(int index) {
+        return (index < 0 || index >= this.menuOptions.length);
     }
 }

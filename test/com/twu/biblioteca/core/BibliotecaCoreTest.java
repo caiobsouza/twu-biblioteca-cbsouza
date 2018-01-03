@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class BibliotecaCoreTest {
 
@@ -38,5 +39,15 @@ public class BibliotecaCoreTest {
         assertEquals("Test-Driven Development", books[0].getTitle());
         assertEquals("Kent Beck", books[0].getAuthor());
         assertEquals(2000, books[0].getYearPublished());
+    }
+
+    @Test
+    public void testGetAvailableBooks(){
+        Book[] availableBooks = core.getAvailableBooks();
+
+        for (int i = 0; i < availableBooks.length; i++) {
+            if(!availableBooks.getIsAvailable())
+                fail();
+        }
     }
 }

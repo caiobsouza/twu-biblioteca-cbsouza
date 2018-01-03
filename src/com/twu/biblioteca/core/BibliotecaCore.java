@@ -3,7 +3,7 @@ package com.twu.biblioteca.core;
 import com.twu.biblioteca.entity.Book;
 
 public class BibliotecaCore {
-    Book[] books;
+    private Book[] books;
 
     public BibliotecaCore(Book[] books){
         this.setBooks(books);

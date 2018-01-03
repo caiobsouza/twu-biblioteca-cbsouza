@@ -11,7 +11,7 @@ import java.io.PrintStream;
 public class BibliotecaAppTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private BibliotecaApp app;
+    BibliotecaApp app;
 
     @Before
     public void setUp(){
@@ -27,6 +27,6 @@ public class BibliotecaAppTest {
     @Test
     public void testWelcomeUser(){
         app.welcomeUser();
-        assertEquals("Welcome to Our Library!", outContent.toString().trim());
+        assertEquals("Welcome to Our Library!", outContent.toString());
     }
 }
