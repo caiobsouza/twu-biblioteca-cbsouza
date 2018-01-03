@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class BibliotecaCoreTest {
 
-    BibliotecaCore core;
+    private BibliotecaCore core;
 
     @Before
     public void setUp() {
