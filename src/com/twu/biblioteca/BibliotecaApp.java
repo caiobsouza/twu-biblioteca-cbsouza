@@ -7,4 +7,8 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         ConsoleHelper.showMessage("OK");
     }
+
+    public void welcomeUser(){
+        ConsoleHelper.showMessage("Welcome to Our Library!");
+    }
 }

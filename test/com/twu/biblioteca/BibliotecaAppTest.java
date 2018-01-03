@@ -1,30 +1,32 @@
-package com.twu.biblioteca.util;
+package com.twu.biblioteca;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
-
-public class ConsoleHelperTest {
+public class BibliotecaAppTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    BibliotecaApp app;
 
     @Before
-    public void setUp() {
+    public void setUp(){
+        app = new BibliotecaApp();
         System.setOut(new PrintStream(outContent));
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(){
         System.setOut(null);
     }
 
     @Test
-    public void testShowMessage(){
-        ConsoleHelper.showMessage("Test Message");
-        assertEquals("Test Message", outContent.toString().trim());
+    public void testWelcomeUser(){
+        app.welcomeUser();
+        assertEquals("Welcome to Our Library!", outContent.toString().trim());
     }
 }
