@@ -4,9 +4,8 @@ import com.twu.biblioteca.entity.Book;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+
+import static org.junit.Assert.*;
 
 public class BibliotecaCoreTest {
 
@@ -39,5 +38,12 @@ public class BibliotecaCoreTest {
         assertEquals("Test-Driven Development", books[0].getTitle());
         assertEquals("Kent Beck", books[0].getAuthor());
         assertEquals(2000, books[0].getYearPublished());
+    }
+
+    @Test
+    public void testBookCheckinOut(){
+        Book book = core.getBooks()[0];
+        book.checkOut();
+        assertFalse(book.getIsAvailable());
     }
 }
