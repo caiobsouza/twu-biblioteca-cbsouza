@@ -16,7 +16,12 @@ public class ListBooksMenuOption extends MenuOption {
     public void action() {
         ConsoleHelper.showMessage("- - - - - - -\nBooks:");
 
-        Book[] books = core.getBooks();
+        MenuOption[] options = factoryBookMenuOptions(core.getBooks());
+        showSubMenu(options);
+    }
+
+    private MenuOption[] factoryBookMenuOptions(Book[] books) {
+
         MenuOption[] options = new MenuOption[books.length + 1];
 
         for (int i = 0; i < books.length; i++) {
@@ -26,7 +31,7 @@ public class ListBooksMenuOption extends MenuOption {
 
         options[books.length] = new QuitMenuOption(String.format("%d. Quit", books.length + 1));
 
-        showSubMenu(options);
+        return options;
     }
 
     private void showSubMenu(MenuOption[] options) {

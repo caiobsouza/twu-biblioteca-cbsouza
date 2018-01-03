@@ -27,6 +27,6 @@ public class BibliotecaAppTest {
     @Test
     public void testWelcomeUser(){
         app.welcomeUser();
-        assertEquals("Welcome to Our Library!", outContent.toString());
+        assertEquals("Welcome to Our Library!", outContent.toString().trim());
     }
 }
