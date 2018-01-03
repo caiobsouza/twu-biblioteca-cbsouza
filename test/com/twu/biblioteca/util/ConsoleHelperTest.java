@@ -33,13 +33,16 @@ public class ConsoleHelperTest {
 
     @Test
     public void testGetUserInput(){
-        ByteArrayInputStream inputContent = new ByteArrayInputStream("1".getBytes());
+        String mockInput = "1";
+        String mockOutput = "Insert a value";
+
+        ByteArrayInputStream inputContent = new ByteArrayInputStream(mockInput.getBytes());
         System.setIn(inputContent);
 
-        int input = ConsoleHelper.getUserInput("Insert a value");
-        
-        assertEquals("Insert a value", outContent.toString().trim());
-        assertEquals(1, input);
+        int consoleInput = ConsoleHelper.getUserInput(mockOutput);
+
+        assertEquals(mockOutput, outContent.toString().trim());
+        assertEquals(Integer.parseInt(mockInput), consoleInput);
 
         System.setIn(null);
     }
