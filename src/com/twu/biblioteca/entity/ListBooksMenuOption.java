@@ -37,8 +37,12 @@ public class ListBooksMenuOption extends MenuOption {
     private void showSubMenu(MenuOption[] options) {
         MainMenu menu = new MainMenu(options);
         menu.show();
-        ConsoleHelper.requestUserChoice(menu);
 
+        MenuOption option = null;
+
+        while (!(option instanceof QuitMenuOption)) {
+            option = ConsoleHelper.requestUserChoice(menu);
+        }
     }
 
 }
