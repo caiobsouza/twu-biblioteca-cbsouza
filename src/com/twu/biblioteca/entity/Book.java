@@ -38,6 +38,7 @@ public class Book {
     }
 
     public void checkOut() {
+        this.isAvailable = false;
     }
 
     public boolean getIsAvailable() {
