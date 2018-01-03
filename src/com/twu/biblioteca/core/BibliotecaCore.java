@@ -6,11 +6,11 @@ public class BibliotecaCore {
     Book[] books;
 
     public BibliotecaCore(Book[] books){
-        this.books = new Book[books.length];
+        this.setBooks(books);
+    }
 
-        for (int i = 0; i < books.length; i++) {
-            this.books[i] = books[i];
-        }
+    public void setBooks(Book[] books) {
+        this.books = books;
     }
 
     public Book[] getBooks(){
