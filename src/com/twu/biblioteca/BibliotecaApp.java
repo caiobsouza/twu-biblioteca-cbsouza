@@ -26,7 +26,7 @@ public class BibliotecaApp {
         BibliotecaApp app = new BibliotecaApp();
         app.welcomeUser();
         app.showMainMenu();
-        app.requestUserChoice();
+        app.readChoice();
     }
 
     public void welcomeUser() {
@@ -42,14 +42,8 @@ public class BibliotecaApp {
         menu.show();
     }
 
-    public void requestUserChoice() {
-        int choice = ConsoleHelper.getUserInput("Insert an option number: ");
-        try {
-            MenuOption option = menu.chooseOption(choice);
-            option.action();
-        } catch (InvalidMenuOptionException ex) {
-            requestUserChoice();
-        }
+    public void readChoice() {
+        ConsoleHelper.requestUserChoice(menu);
     }
 
 
