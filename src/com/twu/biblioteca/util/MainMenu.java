@@ -14,4 +14,7 @@ public class MainMenu {
     public void setMenuOptions(String[] menuOptions){
         this.menuOptions = menuOptions;
     }
+
+    public void show() {
+    }
 }

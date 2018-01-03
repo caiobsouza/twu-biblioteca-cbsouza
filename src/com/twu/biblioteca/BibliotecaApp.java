@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.util.ConsoleHelper;
+import com.twu.biblioteca.util.MainMenu;
 
 public class BibliotecaApp {
 
@@ -11,6 +12,12 @@ public class BibliotecaApp {
 
     public void welcomeUser(){
         ConsoleHelper.showMessage("Welcome to Our Library!");
+    }
+
+    public void showMenu(){
+        MainMenu menu = new MainMenu(new String[]{
+                "1. List Books"
+        });
     }
 
 
