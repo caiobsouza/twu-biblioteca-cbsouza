@@ -48,5 +48,6 @@ public class MainMenuTest {
 
         assertNotNull(menuOption);
         assertEquals("1. List Books", menuOption);
+        assertEquals(menuOption, menu.getCurrentOptionSelected());
     }
 }

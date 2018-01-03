@@ -2,9 +2,16 @@ package com.twu.biblioteca.util;
 
 public class MainMenu {
     private String[] menuOptions;
+    private String currentOptionSelected;
 
     public MainMenu(String[] menuOptions) {
         this.setMenuOptions(menuOptions);
+    }
+
+    public void show() {
+        for (String option : this.menuOptions) {
+            ConsoleHelper.showMessage(option);
+        }
     }
 
     public String[] getMenuOptions() {
@@ -15,10 +22,12 @@ public class MainMenu {
         this.menuOptions = menuOptions;
     }
 
-    public void show() {
-        for (String option : this.menuOptions) {
-            ConsoleHelper.showMessage(option);
-        }
+    public void setCurrentOptionSelected(String currentOptionSelected) {
+        this.currentOptionSelected = currentOptionSelected;
+    }
+
+    public String getCurrentOptionSelected(){
+        return this.currentOptionSelected;
     }
 
     public String chooseOption(int i) {
