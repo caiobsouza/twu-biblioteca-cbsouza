@@ -21,7 +21,11 @@ public class MainMenu {
         }
     }
 
-    public String getOption(int i) {
-        return this.menuOptions[--i];
+    public String chooseOption(int i) {
+        return this.menuOptions[handleZeroIndex(i)];
+    }
+
+    private int handleZeroIndex(int i){
+        return --i;
     }
 }
