@@ -1,5 +1,7 @@
 package com.twu.biblioteca.core;
 
+import com.twu.biblioteca.entity.Book;
+
 public class BibliotecaCore {
     String[] books;
 
@@ -13,5 +15,9 @@ public class BibliotecaCore {
 
     public String[] getBooks() {
         return books;
+    }
+
+    public Book[] getBooks(int fake){
+        return new Book[2];
     }
 }

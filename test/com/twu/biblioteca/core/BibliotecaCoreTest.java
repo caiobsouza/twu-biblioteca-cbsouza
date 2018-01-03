@@ -1,6 +1,6 @@
 package com.twu.biblioteca.core;
 
-import org.junit.Assert;
+import com.twu.biblioteca.entity.Book;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +28,7 @@ public class BibliotecaCoreTest {
 
     @Test
     public void testBookDetails() {
-        Book[] books = core.getBooks();
+        Book[] books = core.getBooks(0);
 
         assertNotNull(books[0]);
         assertEquals("Test-Driven Development", books[0].getTitle());
