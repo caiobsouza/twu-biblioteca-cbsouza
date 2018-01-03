@@ -25,6 +25,6 @@ public class ConsoleHelperTest {
     @Test
     public void testWelcomeMessage(){
         ConsoleHelper.showMessage("Welcome to Our Library!");
-        assertEquals("Welcome to Our Library", outContent.toString());
+        assertEquals("Welcome to Our Library!", outContent.toString().trim());
     }
 }
