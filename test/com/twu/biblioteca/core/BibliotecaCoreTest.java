@@ -40,14 +40,4 @@ public class BibliotecaCoreTest {
         assertEquals("Kent Beck", books[0].getAuthor());
         assertEquals(2000, books[0].getYearPublished());
     }
-
-    @Test
-    public void testGetAvailableBooks(){
-        Book[] availableBooks = core.getAvailableBooks();
-
-        for (int i = 0; i < availableBooks.length; i++) {
-            if(!availableBooks.getIsAvailable())
-                fail();
-        }
-    }
 }
