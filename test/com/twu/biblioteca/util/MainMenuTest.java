@@ -41,4 +41,12 @@ public class MainMenuTest {
         menu.show();
         assertEquals("1. List Books", outContent.toString().trim());
     }
+
+    @Test
+    public void testChooseOption(){
+        String menuOption = menu.getOption(1);
+
+        assertNotNull(menuOption);
+        assertEquals("1. List Books", menuOption);
+    }
 }

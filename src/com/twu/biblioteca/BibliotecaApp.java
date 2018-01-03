@@ -8,6 +8,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp app = new BibliotecaApp();
         app.welcomeUser();
+        app.showMenu();
     }
 
     public void welcomeUser(){
@@ -18,6 +19,8 @@ public class BibliotecaApp {
         MainMenu menu = new MainMenu(new String[]{
                 "1. List Books"
         });
+
+        menu.show();
     }
 
 

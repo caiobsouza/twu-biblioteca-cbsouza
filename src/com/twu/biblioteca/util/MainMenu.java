@@ -20,4 +20,8 @@ public class MainMenu {
             ConsoleHelper.showMessage(option);
         }
     }
+
+    public String getOption(int i) {
+        return null;
+    }
 }
