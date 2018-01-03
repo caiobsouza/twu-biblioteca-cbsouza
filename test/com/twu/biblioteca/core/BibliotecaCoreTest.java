@@ -13,12 +13,16 @@ public class BibliotecaCoreTest {
 
     @Before
     public void setUp() {
-        core = new BibliotecaCore(new String[]{"Test-Driven Development", "Head First Java"});
+        core = new BibliotecaCore(new Book[]
+                {
+                        new Book("Test-Driven Development", "Kent Beck", 2000),
+                        new Book("Head First Java", "Clark Kent", 2004)
+                });
     }
 
     @Test
     public void testListBooks() {
-        String[] books = core.getBooks();
+        String[] books = core.getBooks(0);
 
         assertNotNull(books);
         assertEquals(2, books.length);
@@ -28,7 +32,7 @@ public class BibliotecaCoreTest {
 
     @Test
     public void testBookDetails() {
-        Book[] books = core.getBooks(0);
+        Book[] books = core.getBooks();
 
         assertNotNull(books[0]);
         assertEquals("Test-Driven Development", books[0].getTitle());
