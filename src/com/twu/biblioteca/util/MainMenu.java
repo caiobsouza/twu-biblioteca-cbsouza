@@ -2,7 +2,7 @@ package com.twu.biblioteca.util;
 
 public class MainMenu {
     private String[] menuOptions;
-    private String currentOptionSelected;
+    private int currentMenuIndex;
 
     public MainMenu(String[] menuOptions) {
         this.setMenuOptions(menuOptions);
@@ -22,16 +22,19 @@ public class MainMenu {
         this.menuOptions = menuOptions;
     }
 
-    public void setCurrentOptionSelected(String currentOptionSelected) {
-        this.currentOptionSelected = currentOptionSelected;
+    public void setCurrentMenuIndex(int currentOptionSelected) {
+        this.currentMenuIndex = currentOptionSelected;
     }
 
-    public String getCurrentOptionSelected(){
-        return this.currentOptionSelected;
+    public int getCurrentMenuIndex(){
+        return this.currentMenuIndex;
     }
 
     public String chooseOption(int i) {
-        return this.menuOptions[handleZeroIndex(i)];
+        int index = handleZeroIndex(i);
+        this.setCurrentMenuIndex(index);
+
+        return this.menuOptions[index];
     }
 
     private int handleZeroIndex(int i){
