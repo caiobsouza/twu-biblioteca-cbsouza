@@ -1,6 +1,7 @@
 package com.twu.biblioteca.util;
 
 import com.twu.biblioteca.entity.MenuOption;
+import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 
 public class MainMenu {
     private MenuOption[] menuOptions;
@@ -32,8 +33,12 @@ public class MainMenu {
         return this.currentMenuIndex;
     }
 
-    public MenuOption chooseOption(int i) {
+    public MenuOption chooseOption(int i) throws InvalidMenuOptionException{
         int index = handleZeroIndex(i);
+
+        if(index < 0 || index >= this.menuOptions.length)
+            throw new InvalidMenuOptionException();
+
         this.setCurrentMenuIndex(index);
 
         return this.menuOptions[index];

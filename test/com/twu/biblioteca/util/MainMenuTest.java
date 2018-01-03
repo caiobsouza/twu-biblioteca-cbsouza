@@ -1,6 +1,8 @@
 package com.twu.biblioteca.util;
 
 import com.twu.biblioteca.entity.MenuOption;
+
+import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class MainMenuTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -18,7 +21,7 @@ public class MainMenuTest {
     @Before
     public void setUp() {
         menu = new MainMenu(new MenuOption[]{
-               new MenuOption("1. List Books")
+                new MenuOption("1. List Books")
         });
         System.setOut(new PrintStream(outContent));
     }
@@ -44,11 +47,25 @@ public class MainMenuTest {
     }
 
     @Test
-    public void testChooseOption(){
-        MenuOption menuOption = menu.chooseOption(1);
+    public void testChooseOption() {
+        try {
+            MenuOption menuOption = menu.chooseOption(1);
 
-        assertNotNull(menuOption);
-        assertEquals("1. List Books", menuOption.getLabel());
-        assertEquals(0, menu.getCurrentMenuIndex());
+            assertNotNull(menuOption);
+            assertEquals("1. List Books", menuOption.getLabel());
+            assertEquals(0, menu.getCurrentMenuIndex());
+        } catch (InvalidMenuOptionException ex) {
+            fail();
+        }
+    }
+
+    @Test
+    public void testInvalidMenuOption() {
+        try {
+            MenuOption menuOption = menu.chooseOption(5);
+            fail();
+        } catch (InvalidMenuOptionException ex) {
+
+        }
     }
 }
