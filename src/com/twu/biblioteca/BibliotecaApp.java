@@ -2,13 +2,17 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.entity.ListBooksMenuOption;
 import com.twu.biblioteca.entity.MenuOption;
+import com.twu.biblioteca.entity.QuitMenuOption;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.MainMenu;
+import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 
 public class BibliotecaApp {
 
     private BibliotecaCore core;
+    private MainMenu menu;
 
     public BibliotecaApp() {
         this.core = new BibliotecaCore(new Book[]
@@ -21,20 +25,31 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp app = new BibliotecaApp();
         app.welcomeUser();
-        app.showMenu();
+        app.showMainMenu();
+        app.requestUserChoice();
     }
 
     public void welcomeUser() {
         ConsoleHelper.showMessage("Welcome to Our Library!");
     }
 
-    public void showMenu() {
-        MainMenu menu = new MainMenu(new MenuOption[]{
-                new MenuOption("1. List Books")
+    public void showMainMenu() {
+        menu = new MainMenu(new MenuOption[]{
+                new ListBooksMenuOption("1. List Books", core),
+                new QuitMenuOption("2. Quit")
         });
 
         menu.show();
+    }
 
+    public void requestUserChoice() {
+        int choice = ConsoleHelper.getUserInput("Insert an option number: ");
+        try {
+            MenuOption option = menu.chooseOption(choice);
+            option.action();
+        } catch (InvalidMenuOptionException ex) {
+            requestUserChoice();
+        }
     }
 
 

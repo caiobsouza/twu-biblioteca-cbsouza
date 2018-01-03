@@ -1,6 +1,6 @@
 package com.twu.biblioteca.entity;
 
-public class MenuOption {
+public abstract class MenuOption {
     private String label;
 
     public MenuOption(String label){
@@ -18,4 +18,6 @@ public class MenuOption {
     public boolean equals(MenuOption option) {
         return (this.label.equals(option.label));
     }
+
+    public abstract void action();
 }

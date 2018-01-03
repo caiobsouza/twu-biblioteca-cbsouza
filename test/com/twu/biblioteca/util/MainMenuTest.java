@@ -1,5 +1,8 @@
 package com.twu.biblioteca.util;
 
+import com.twu.biblioteca.core.BibliotecaCore;
+import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.entity.ListBooksMenuOption;
 import com.twu.biblioteca.entity.MenuOption;
 
 import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
@@ -21,7 +24,9 @@ public class MainMenuTest {
     @Before
     public void setUp() {
         menu = new MainMenu(new MenuOption[]{
-                new MenuOption("1. List Books")
+                new ListBooksMenuOption("1. List Books", new BibliotecaCore(new Book[]{
+                        new Book("Book Title", "Author", 2000)
+                }))
         });
         System.setOut(new PrintStream(outContent));
     }
