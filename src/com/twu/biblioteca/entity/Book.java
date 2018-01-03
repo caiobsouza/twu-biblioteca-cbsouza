@@ -4,11 +4,13 @@ public class Book {
     private String title;
     private String author;
     private int yearPublished;
+    private boolean isAvailable;
 
     public Book(String title, String author, int yearPublished){
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.isAvailable = true;
     }
 
     public void setTitle(String title) {
@@ -33,5 +35,12 @@ public class Book {
 
     public int getYearPublished() {
         return yearPublished;
+    }
+
+    public void checkOut() {
+    }
+
+    public boolean getIsAvailable() {
+        return isAvailable;
     }
 }
