@@ -11,7 +11,7 @@ import java.io.PrintStream;
 public class BibliotecaAppTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    BibliotecaApp app;
+    private BibliotecaApp app;
 
     @Before
     public void setUp(){
