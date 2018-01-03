@@ -23,7 +23,7 @@ public class ConsoleHelperTest {
     }
 
     @Test
-    public void testWelcomeMessage(){
+    public void testShowMessage(){
         ConsoleHelper.showMessage("Welcome to Our Library!");
         assertEquals("Welcome to Our Library!", outContent.toString().trim());
     }
