@@ -1,24 +1,26 @@
 package com.twu.biblioteca.util;
 
+import com.twu.biblioteca.entity.MenuOption;
+
 public class MainMenu {
-    private String[] menuOptions;
+    private MenuOption[] menuOptions;
     private int currentMenuIndex;
 
-    public MainMenu(String[] menuOptions) {
+    public MainMenu(MenuOption[] menuOptions) {
         this.setMenuOptions(menuOptions);
     }
 
     public void show() {
-        for (String option : this.menuOptions) {
-            ConsoleHelper.showMessage(option);
+        for (MenuOption option : this.menuOptions) {
+            ConsoleHelper.showMessage(option.getLabel());
         }
     }
 
-    public String[] getMenuOptions() {
+    public MenuOption[] getMenuOptions() {
         return menuOptions;
     }
 
-    public void setMenuOptions(String[] menuOptions) {
+    public void setMenuOptions(MenuOption[] menuOptions) {
         this.menuOptions = menuOptions;
     }
 
@@ -30,7 +32,7 @@ public class MainMenu {
         return this.currentMenuIndex;
     }
 
-    public String chooseOption(int i) {
+    public MenuOption chooseOption(int i) {
         int index = handleZeroIndex(i);
         this.setCurrentMenuIndex(index);
 

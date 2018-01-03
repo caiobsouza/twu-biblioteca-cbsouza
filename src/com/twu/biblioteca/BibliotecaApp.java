@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.entity.MenuOption;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.MainMenu;
 
@@ -16,8 +17,8 @@ public class BibliotecaApp {
     }
 
     public void showMenu(){
-        MainMenu menu = new MainMenu(new String[]{
-                "1. List Books"
+        MainMenu menu = new MainMenu(new MenuOption[]{
+                new MenuOption("1. List Books")
         });
 
         menu.show();

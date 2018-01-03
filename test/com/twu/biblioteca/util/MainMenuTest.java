@@ -1,5 +1,6 @@
 package com.twu.biblioteca.util;
 
+import com.twu.biblioteca.entity.MenuOption;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +17,8 @@ public class MainMenuTest {
 
     @Before
     public void setUp() {
-        menu = new MainMenu(new String[]{
-                "1. List Books"
+        menu = new MainMenu(new MenuOption[]{
+               new MenuOption("1. List Books")
         });
         System.setOut(new PrintStream(outContent));
     }
@@ -29,11 +30,11 @@ public class MainMenuTest {
 
     @Test
     public void testMenuOptions() {
-        String[] options = menu.getMenuOptions();
+        MenuOption[] options = menu.getMenuOptions();
 
         assertNotNull(options);
         assertEquals(1, options.length);
-        assertEquals("1. List Books", options[0]);
+        assertEquals("1. List Books", options[0].getLabel());
     }
 
     @Test
@@ -44,10 +45,10 @@ public class MainMenuTest {
 
     @Test
     public void testChooseOption(){
-        String menuOption = menu.chooseOption(1);
+        MenuOption menuOption = menu.chooseOption(1);
 
         assertNotNull(menuOption);
-        assertEquals("1. List Books", menuOption);
+        assertEquals("1. List Books", menuOption.getLabel());
         assertEquals(0, menu.getCurrentMenuIndex());
     }
 }
