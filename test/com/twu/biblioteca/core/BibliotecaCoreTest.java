@@ -43,6 +43,8 @@ public class BibliotecaCoreTest {
     @Test
     public void testBookCheckinOut(){
         Book book = core.getBooks()[0];
+
+        assertTrue(book.getIsAvailable());
         book.checkOut();
         assertFalse(book.getIsAvailable());
     }
