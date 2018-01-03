@@ -22,6 +22,6 @@ public class MainMenu {
     }
 
     public String getOption(int i) {
-        return null;
+        return this.menuOptions[--i];
     }
 }
