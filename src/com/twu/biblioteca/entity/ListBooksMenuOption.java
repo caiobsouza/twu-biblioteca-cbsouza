@@ -26,8 +26,7 @@ public class ListBooksMenuOption extends MenuOption {
         MenuOption[] options = new MenuOption[books.length + 1];
 
         for (int i = 0; i < books.length; i++) {
-            String label = String.format("%d. %s", (i + 1), books[i].getTitle());
-            options[i] = new BookMenuOption(label, books[i]);
+            options[i] = new BookItemMenuOption(generateLabel(i, books[i]), books[i]);
         }
 
         options[books.length] = new QuitMenuOption(String.format("%d. Quit", books.length + 1));
@@ -44,6 +43,14 @@ public class ListBooksMenuOption extends MenuOption {
         while (!(option instanceof QuitMenuOption)) {
             option = ConsoleHelper.requestUserChoice(menu);
         }
+    }
+
+    private String generateLabel(int index, Book book) {
+        String label = String.format("%d. %s\n", (index + 1), book.getTitle());
+        label += String.format("Author: %s\n", book.getAuthor());
+        label += String.format("Year: %d\n- - - - -", book.getYearPublished());
+
+        return label;
     }
 
 }

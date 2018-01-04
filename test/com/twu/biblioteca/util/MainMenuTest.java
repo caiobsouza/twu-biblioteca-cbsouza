@@ -25,7 +25,7 @@ public class MainMenuTest {
     public void setUp() {
         menu = new MainMenu(new MenuOption[]{
                 new ListBooksMenuOption("1. List Books", new BibliotecaCore(new Book[]{
-                        new Book("Book Title", "Author", 2000)
+                        new Book("Book Title", "Author", 2000, true)
                 }))
         });
         System.setOut(new PrintStream(outContent));

@@ -7,7 +7,6 @@ import com.twu.biblioteca.entity.MenuOption;
 import com.twu.biblioteca.entity.QuitMenuOption;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.MainMenu;
-import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 
 public class BibliotecaApp {
 
@@ -17,8 +16,8 @@ public class BibliotecaApp {
     public BibliotecaApp() {
         this.core = new BibliotecaCore(new Book[]
                 {
-                        new Book("Test-Driven Development", "Kent Beck", 2000),
-                        new Book("Head First Java", "Clark Kent", 2004)
+                        new Book("Test-Driven Development", "Kent Beck", 2000, true),
+                        new Book("Head First Java", "Clark Kent", 2004, true)
                 });
     }
 
