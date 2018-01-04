@@ -15,14 +15,19 @@ public class BibliotecaCoreTest {
 
     private BibliotecaCore core;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private int booksCount;
 
     @Before
     public void setUp() {
-        core = new BibliotecaCore(new Book[]
+        Book[] mock = new Book[]
                 {
                         new Book("Test-Driven Development", "Kent Beck", 2000, true),
-                        new Book("Head First Java", "Clark Kent", 2004, true)
-                });
+                        new Book("Head First Java", "Clark Kent", 2004, true),
+                        new Book("Java Hot To Program", "Deitel", 2010, true)
+                };
+
+        this.booksCount = mock.length;
+        this.core = new BibliotecaCore(mock);
 
         System.setOut(new PrintStream(outContent));
     }
@@ -37,7 +42,7 @@ public class BibliotecaCoreTest {
         Book[] books = core.getBooks();
 
         assertNotNull(books);
-        assertEquals(2, books.length);
+        assertEquals(booksCount, books.length);
         assertEquals("Test-Driven Development", books[0].getTitle());
         assertEquals("Head First Java", books[1].getTitle());
     }
@@ -66,6 +71,13 @@ public class BibliotecaCoreTest {
         Book book = core.getBooks()[0];
         book.checkOut();
         assertEquals("Thank you! Enjoy the book", outContent.toString().trim());
+    }
+
+    @Test
+    public void testBookCheckoutUnavailableErrorMessage(){
+        Book book = core.getBooks()[2];
+        book.checkOut();
+        assertEquals("That book is not available.", outContent.toString().trim());
     }
 
 

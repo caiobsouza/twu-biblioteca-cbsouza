@@ -25,7 +25,7 @@ public class ListBooksMenuOption extends MenuOption {
 
         MenuOption[] options = new MenuOption[books.length + 1];
 
-        for (int i = 0; i < books.length; i++) {
+        for (int i = 0; i < books.length && books[i].getIsAvailable(); i++) {
             options[i] = new BookItemMenuOption(generateLabel(i, books[i]), books[i]);
         }
 
