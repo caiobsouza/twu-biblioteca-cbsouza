@@ -1,5 +1,7 @@
 package com.twu.biblioteca.entity;
 
+import com.twu.biblioteca.util.ConsoleHelper;
+
 public class Book {
     private String title;
     private String author;
@@ -39,6 +41,7 @@ public class Book {
 
     public void checkOut() {
         this.isAvailable = false;
+        ConsoleHelper.showMessage("Thank you! Enjoy the book");
     }
 
     public boolean getIsAvailable() {
