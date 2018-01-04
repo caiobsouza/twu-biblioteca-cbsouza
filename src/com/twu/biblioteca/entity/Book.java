@@ -9,11 +9,11 @@ public class Book {
     private int yearPublished;
     private boolean isAvailable;
 
-    public Book(String title, String author, int yearPublished){
+    public Book(String title, String author, int yearPublished, boolean isAvailable){
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
-        this.isAvailable = true;
+        this.isAvailable = isAvailable;
     }
 
     public void setTitle(String title) {

@@ -20,8 +20,8 @@ public class BibliotecaCoreTest {
     public void setUp() {
         core = new BibliotecaCore(new Book[]
                 {
-                        new Book("Test-Driven Development", "Kent Beck", 2000),
-                        new Book("Head First Java", "Clark Kent", 2004)
+                        new Book("Test-Driven Development", "Kent Beck", 2000, true),
+                        new Book("Head First Java", "Clark Kent", 2004, true)
                 });
 
         System.setOut(new PrintStream(outContent));
