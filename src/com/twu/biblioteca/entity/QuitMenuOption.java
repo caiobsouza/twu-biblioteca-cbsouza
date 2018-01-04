@@ -1,6 +1,7 @@
 package com.twu.biblioteca.entity;
 
 import com.twu.biblioteca.util.ConsoleHelper;
+import com.twu.biblioteca.util.Messages;
 
 public class QuitMenuOption extends MenuOption {
 
@@ -10,7 +11,7 @@ public class QuitMenuOption extends MenuOption {
 
     @Override
     public void action() {
-        ConsoleHelper.showMessage("Bye!");
+        ConsoleHelper.showMessage(Messages.getQuitMessage());
         System.exit(0);
     }
 }

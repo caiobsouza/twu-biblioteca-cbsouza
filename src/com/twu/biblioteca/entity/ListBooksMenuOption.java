@@ -3,6 +3,7 @@ package com.twu.biblioteca.entity;
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.MainMenu;
+import com.twu.biblioteca.util.Messages;
 
 public class ListBooksMenuOption extends MenuOption {
     private BibliotecaCore core;
@@ -14,7 +15,7 @@ public class ListBooksMenuOption extends MenuOption {
 
     @Override
     public void action() {
-        ConsoleHelper.showMessage("- - - - - - -\nBooks:");
+        ConsoleHelper.showMessage(Messages.getBooksHeaderMessage());
 
         MenuOption[] options = factoryBookMenuOptions(core.getBooks());
         showSubMenu(options);
