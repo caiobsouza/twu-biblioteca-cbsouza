@@ -26,13 +26,13 @@ public class ConsoleHelperTest {
     }
 
     @Test
-    public void testShowMessage(){
+    public void testShowMessage() {
         ConsoleHelper.showMessage("Test Message");
         assertEquals("Test Message", outContent.toString().trim());
     }
 
     @Test
-    public void testGetUserInput(){
+    public void testGetUserInput() {
         String mockInput = "1";
         String mockOutput = "Insert a value";
 

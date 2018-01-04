@@ -23,7 +23,7 @@ public class BibliotecaCoreTest {
                 {
                         new Book("Test-Driven Development", "Kent Beck", 2000, true),
                         new Book("Head First Java", "Clark Kent", 2004, true),
-                        new Book("Java Hot To Program", "Deitel", 2010, true)
+                        new Book("Java Hot To Program", "Deitel", 2010, false)
                 };
 
         this.booksCount = mock.length;
@@ -68,15 +68,15 @@ public class BibliotecaCoreTest {
 
     @Test
     public void testBookCheckoutSuccessMessage(){
-        Book book = core.getBooks()[0];
-        book.checkOut();
+        Book availableBook = core.getBooks()[0];
+        availableBook.checkOut();
         assertEquals("Thank you! Enjoy the book", outContent.toString().trim());
     }
 
     @Test
     public void testBookCheckoutUnavailableErrorMessage(){
-        Book book = core.getBooks()[2];
-        book.checkOut();
+        Book unavailableBook = core.getBooks()[2];
+        unavailableBook.checkOut();
         assertEquals("That book is not available.", outContent.toString().trim());
     }
 
