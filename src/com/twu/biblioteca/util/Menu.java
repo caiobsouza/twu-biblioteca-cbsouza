@@ -3,11 +3,11 @@ package com.twu.biblioteca.util;
 import com.twu.biblioteca.entity.MenuOption;
 import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 
-public class MainMenu {
+public class Menu {
     private MenuOption[] menuOptions;
     private int currentMenuIndex;
 
-    public MainMenu(MenuOption[] menuOptions) {
+    public Menu(MenuOption[] menuOptions) {
         this.setMenuOptions(menuOptions);
     }
 

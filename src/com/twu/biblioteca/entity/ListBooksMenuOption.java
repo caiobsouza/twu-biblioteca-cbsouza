@@ -2,7 +2,7 @@ package com.twu.biblioteca.entity;
 
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.util.ConsoleHelper;
-import com.twu.biblioteca.util.MainMenu;
+import com.twu.biblioteca.util.Menu;
 import com.twu.biblioteca.util.Messages;
 
 public class ListBooksMenuOption extends MenuOption {
@@ -35,7 +35,7 @@ public class ListBooksMenuOption extends MenuOption {
     }
 
     private void showSubMenu(MenuOption[] options) {
-        MainMenu menu = new MainMenu(options);
+        Menu menu = new Menu(options);
         menu.show();
 
         MenuOption option = null;

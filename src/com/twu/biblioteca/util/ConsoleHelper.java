@@ -19,7 +19,7 @@ public class ConsoleHelper {
         return in.nextInt();
     }
 
-    public static MenuOption requestUserChoice(MainMenu menu) {
+    public static MenuOption requestUserChoice(Menu menu) {
         int choice = ConsoleHelper.getUserInput("Insert an option number: ");
         try {
             MenuOption option = menu.chooseOption(choice);

@@ -19,11 +19,11 @@ import static org.junit.Assert.fail;
 
 public class MainMenuTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private MainMenu menu;
+    private Menu menu;
 
     @Before
     public void setUp() {
-        menu = new MainMenu(new MenuOption[]{
+        menu = new Menu(new MenuOption[]{
                 new ListBooksMenuOption("1. List Books", new BibliotecaCore(new Book[]{
                         new Book("Book Title", "Author", 2000, true)
                 }))

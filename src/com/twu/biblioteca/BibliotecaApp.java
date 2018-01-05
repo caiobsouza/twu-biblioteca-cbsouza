@@ -6,12 +6,12 @@ import com.twu.biblioteca.entity.ListBooksMenuOption;
 import com.twu.biblioteca.entity.MenuOption;
 import com.twu.biblioteca.entity.QuitMenuOption;
 import com.twu.biblioteca.util.ConsoleHelper;
-import com.twu.biblioteca.util.MainMenu;
+import com.twu.biblioteca.util.Menu;
 
 public class BibliotecaApp {
 
     private BibliotecaCore core;
-    private MainMenu menu;
+    private Menu menu;
 
     public BibliotecaApp() {
         this.core = new BibliotecaCore(new Book[]
@@ -33,7 +33,7 @@ public class BibliotecaApp {
     }
 
     public void showMainMenu() {
-        menu = new MainMenu(new MenuOption[]{
+        menu = new Menu(new MenuOption[]{
                 new ListBooksMenuOption("1. List Books", core),
                 new QuitMenuOption("2. Quit")
         });
