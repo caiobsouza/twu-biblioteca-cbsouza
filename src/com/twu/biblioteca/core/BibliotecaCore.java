@@ -27,4 +27,8 @@ public class BibliotecaCore {
     public boolean hasBookInCollection(Book book) {
         return Arrays.stream(this.books).anyMatch(book::equals);
     }
+
+    public Book findBookByName(String bookName) {
+        return null;
+    }
 }

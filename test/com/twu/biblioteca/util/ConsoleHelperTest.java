@@ -39,7 +39,7 @@ public class ConsoleHelperTest {
         ByteArrayInputStream inputContent = new ByteArrayInputStream(mockInput.getBytes());
         System.setIn(inputContent);
 
-        int consoleInput = ConsoleHelper.getUserInput(mockOutput);
+        int consoleInput = ConsoleHelper.getUserIntInput(mockOutput);
 
         assertEquals(mockOutput, outContent.toString().trim());
         assertEquals(Integer.parseInt(mockInput), consoleInput);

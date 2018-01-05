@@ -1,10 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.core.BibliotecaCore;
-import com.twu.biblioteca.entity.Book;
-import com.twu.biblioteca.entity.ListBooksMenuOption;
-import com.twu.biblioteca.entity.MenuOption;
-import com.twu.biblioteca.entity.QuitMenuOption;
+import com.twu.biblioteca.entity.*;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.Menu;
 
@@ -35,7 +32,8 @@ public class BibliotecaApp {
     public void showMainMenu() {
         menu = new Menu(new MenuOption[]{
                 new ListBooksMenuOption("1. List Books", core),
-                new QuitMenuOption("2. Quit")
+                new ReturnBookMenuOption("2. Return Book", core),
+                new QuitMenuOption("3. Quit")
         });
 
         menu.show();

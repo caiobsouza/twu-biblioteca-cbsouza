@@ -67,12 +67,19 @@ public class BibliotecaCoreTest {
         }
     }
 
-
-
     @Test
-    public void testLibraryContainsBook(){
+    public void testLibraryContainsBook() {
         Book book = core.getBooks()[0];
         assertTrue(core.hasBookInCollection(book));
+    }
+
+    @Test
+    public void testFindBookByName() {
+        String bookName = "Test-Driven Development";
+
+        Book book = core.findBookByName(bookName);
+        assertNotNull(book);
+        assertEquals(book, book.getTitle());
     }
 
 }

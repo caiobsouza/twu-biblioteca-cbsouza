@@ -13,14 +13,20 @@ public class ConsoleHelper {
         out.println(s);
     }
 
-    public static int getUserInput(String message) {
+    public static int getUserIntInput(String message) {
         out.print(message);
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }
 
+    public static String getUserStringInput(String message) {
+        out.print(message);
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
+    }
+
     public static MenuOption requestUserChoice(Menu menu) {
-        int choice = ConsoleHelper.getUserInput("Insert an option number: ");
+        int choice = ConsoleHelper.getUserIntInput("Insert an option number: ");
         try {
             MenuOption option = menu.chooseOption(choice);
             option.action();
