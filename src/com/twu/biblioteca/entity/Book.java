@@ -62,8 +62,8 @@ public class Book {
     public void checkIn(BibliotecaCore core) throws InvalidCheckinException {
         setIsAvailable(true);
 
-//        if(!core.hasBookInCollection(this))
-//            throw new InvalidCheckinException();
+        if(!core.hasBookInCollection(this))
+            throw new InvalidCheckinException();
 
         ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
     }

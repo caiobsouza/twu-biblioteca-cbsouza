@@ -83,7 +83,7 @@ public class BookTest {
     @Test
     public void testReturnBookError() {
         try {
-            Book availableBook = core.getBooks()[2];
+            Book availableBook = new Book("A Book", "Me", 2018, true);
             availableBook.checkIn(core);
             fail();
         } catch (InvalidCheckinException ex) {
