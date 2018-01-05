@@ -83,19 +83,28 @@ public class BookTest {
     @Test
     public void testReturnBookError() {
         try {
-            Book availableBook = new Book("A Book", "Me", 2018, true);
-            availableBook.checkIn(core);
+            Book awayBook = new Book("A Book", "Me", 2018, true);
+            awayBook.checkIn(core);
             fail();
         } catch (InvalidCheckinException ex) {
 
         }
     }
+//    @Test
+//    public void testReturnBookCheckinErrorMessage() {
+//
+//        try {
+//            Book availableBook = new Book("A Book", "Me", 2018, true);
+//            availableBook.checkIn(core);
+//            fail();
+//        } catch (InvalidCheckinException ex) {
+//
+//        }
+//
+//        Book availableBook = core.getBooks()[1];
+//        availableBook.checkIn(core);
+//        assertEquals("That is not a valid book to return.", outContent.toString().trim());
+//    }
 }
 
-//        @Test
-//        public void testReturnBookCheckinErrorMessage() {
-//            Book availableBook = core.getBooks()[1];
-//            availableBook.checkIn();
-//            assertEquals("That is not a valid book to return.", outContent.toString().trim());
-//        }
 
