@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class BibliotecaCore {
     private Book[] books;
 
-    public BibliotecaCore(Book[] books){
+    public BibliotecaCore(Book[] books) {
         this.setBooks(books);
     }
 
@@ -16,12 +16,11 @@ public class BibliotecaCore {
         this.books = books;
     }
 
-    public Book[] getBooks(){
+    public Book[] getBooks() {
         return this.books;
     }
 
     public Book[] getAvailableBooks() {
-        Book[] available = Arrays.stream(this.books).filter(b -> b.getIsAvailable()).toArray(Book[]::new);
-        return available;
+        return Arrays.stream(this.books).filter(Book::getIsAvailable).toArray(Book[]::new);
     }
 }
