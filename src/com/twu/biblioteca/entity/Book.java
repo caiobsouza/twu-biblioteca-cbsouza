@@ -54,6 +54,6 @@ public class Book {
     }
 
     public void checkIn() {
-
+        this.isAvailable = true;
     }
 }
