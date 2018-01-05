@@ -63,7 +63,7 @@ public class Book {
         setIsAvailable(true);
 
         if (!core.hasBookInCollection(this)) {
-            ConsoleHelper.showMessage("That is not a valid book to return.");
+            ConsoleHelper.showMessage(Messages.getErrorCheckinMessage());
             throw new InvalidCheckinException();
         }
         ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
