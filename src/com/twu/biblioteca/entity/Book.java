@@ -44,7 +44,7 @@ public class Book {
         if (!this.isAvailable) {
             ConsoleHelper.showMessage(Messages.getErrorCheckoutMessage());
         } else {
-            this.isAvailable = false;
+            setIsAvailable(true);
             ConsoleHelper.showMessage(Messages.getSuccessCheckoutMessage());
         }
     }
@@ -53,7 +53,11 @@ public class Book {
         return isAvailable;
     }
 
+    public void setIsAvailable(boolean available) {
+        isAvailable = available;
+    }
+
     public void checkIn() {
-        this.isAvailable = true;
+        setIsAvailable(true);
     }
 }
