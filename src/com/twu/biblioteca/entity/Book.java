@@ -65,6 +65,6 @@ public class Book {
         if(!core.hasBookInCollection(this))
             throw new InvalidCheckinException();
 
-        ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
+        ConsoleHelper.showMessage("");
     }
 }
