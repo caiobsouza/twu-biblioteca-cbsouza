@@ -59,6 +59,6 @@ public class Book {
 
     public void checkIn() {
         setIsAvailable(true);
-        ConsoleHelper.showMessage("Thank you for returning the book.");
+        ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
     }
 }
