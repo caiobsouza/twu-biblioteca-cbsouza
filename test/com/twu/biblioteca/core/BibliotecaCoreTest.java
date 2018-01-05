@@ -67,34 +67,12 @@ public class BibliotecaCoreTest {
         }
     }
 
+
+
     @Test
-    public void testBookCheckout() {
+    public void testLibraryContainsBook(){
         Book book = core.getBooks()[0];
-
-        assertTrue(book.getIsAvailable());
-        book.checkOut();
-        assertFalse(book.getIsAvailable());
-    }
-
-    @Test
-    public void testBookCheckoutSuccessMessage() {
-        Book availableBook = core.getBooks()[0];
-        availableBook.checkOut();
-        assertEquals("Thank you! Enjoy the book", outContent.toString().trim());
-    }
-
-    @Test
-    public void testBookCheckoutUnavailableErrorMessage() {
-        Book unavailableBook = core.getBooks()[2];
-        unavailableBook.checkOut();
-        assertEquals("That book is not available.", outContent.toString().trim());
-    }
-
-    @Test
-    public void testReturnBook() {
-        Book unavailableBook = core.getBooks()[2];
-        unavailableBook.checkIn();
-        assertTrue(unavailableBook.getIsAvailable());
+        assertTrue(core.hasBookInCollection(book));
     }
 
 }

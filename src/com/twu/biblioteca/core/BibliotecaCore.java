@@ -23,4 +23,8 @@ public class BibliotecaCore {
     public Book[] getAvailableBooks() {
         return Arrays.stream(this.books).filter(Book::getIsAvailable).toArray(Book[]::new);
     }
+
+    public boolean hasBookInCollection(Book book) {
+        return Arrays.stream(this.books).anyMatch(book::equals);
+    }
 }
