@@ -62,7 +62,7 @@ public class BookTest{
         public void testReturnBook() {
             Book unavailableBook = core.getBooks()[2];
             unavailableBook.checkIn();
-            assertEquals("Thank you for returning the book.", outContent.toString().trim());
+            assertTrue(unavailableBook.getIsAvailable());
         }
 
         @Test
