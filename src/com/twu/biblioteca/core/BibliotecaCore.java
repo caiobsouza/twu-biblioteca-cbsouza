@@ -2,6 +2,9 @@ package com.twu.biblioteca.core;
 
 import com.twu.biblioteca.entity.Book;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class BibliotecaCore {
     private Book[] books;
 
@@ -18,6 +21,7 @@ public class BibliotecaCore {
     }
 
     public Book[] getAvailableBooks() {
-        return this.books;
+        Book[] available = Arrays.stream(this.books).filter(b -> b.getIsAvailable()).toArray(Book[]::new);
+        return available;
     }
 }
