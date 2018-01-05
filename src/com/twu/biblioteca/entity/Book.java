@@ -62,9 +62,10 @@ public class Book {
     public void checkIn(BibliotecaCore core) throws InvalidCheckinException {
         setIsAvailable(true);
 
-        if(!core.hasBookInCollection(this))
+        if (!core.hasBookInCollection(this)) {
+            ConsoleHelper.showMessage("That is not a valid book to return.");
             throw new InvalidCheckinException();
-
-        ConsoleHelper.showMessage("");
+        }
+        ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
     }
 }
