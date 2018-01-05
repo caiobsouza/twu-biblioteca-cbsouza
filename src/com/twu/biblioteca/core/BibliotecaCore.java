@@ -16,4 +16,8 @@ public class BibliotecaCore {
     public Book[] getBooks(){
         return this.books;
     }
+
+    public Book[] getAvailableBooks() {
+        return this.books;
+    }
 }
