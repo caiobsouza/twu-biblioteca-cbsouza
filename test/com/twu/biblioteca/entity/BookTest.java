@@ -1,6 +1,7 @@
 package com.twu.biblioteca.entity;
 
 import com.twu.biblioteca.core.BibliotecaCore;
+import com.twu.biblioteca.util.exceptions.InvalidCheckinException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class BookTest{
+public class BookTest {
     private BibliotecaCore core;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -34,41 +35,67 @@ public class BookTest{
     }
 
 
+    @Test
+    public void testBookCheckout() {
+        Book book = core.getBooks()[0];
 
-        @Test
-        public void testBookCheckout() {
-            Book book = core.getBooks()[0];
+        assertTrue(book.getIsAvailable());
+        book.checkOut();
+        assertFalse(book.getIsAvailable());
+    }
 
-            assertTrue(book.getIsAvailable());
-            book.checkOut();
-            assertFalse(book.getIsAvailable());
-        }
+    @Test
+    public void testBookCheckoutSuccessMessage() {
+        Book availableBook = core.getBooks()[0];
+        availableBook.checkOut();
+        assertEquals("Thank you! Enjoy the book", outContent.toString().trim());
+    }
 
-        @Test
-        public void testBookCheckoutSuccessMessage() {
-            Book availableBook = core.getBooks()[0];
-            availableBook.checkOut();
-            assertEquals("Thank you! Enjoy the book", outContent.toString().trim());
-        }
+    @Test
+    public void testBookCheckoutUnavailableErrorMessage() {
+        Book unavailableBook = core.getBooks()[2];
+        unavailableBook.checkOut();
+        assertEquals("That book is not available.", outContent.toString().trim());
+    }
 
-        @Test
-        public void testBookCheckoutUnavailableErrorMessage() {
+    @Test
+    public void testReturnBook() {
+        try {
             Book unavailableBook = core.getBooks()[2];
-            unavailableBook.checkOut();
-            assertEquals("That book is not available.", outContent.toString().trim());
-        }
-
-        @Test
-        public void testReturnBook() {
-            Book unavailableBook = core.getBooks()[2];
-            unavailableBook.checkIn();
+            unavailableBook.checkIn(core);
             assertTrue(unavailableBook.getIsAvailable());
+        } catch (InvalidCheckinException ex) {
+            fail();
         }
+    }
 
-        @Test
-        public void testReturnBookCheckinMessage() {
+    @Test
+    public void testReturnBookCheckinMessage() {
+        try {
             Book unavailableBook = core.getBooks()[2];
-            unavailableBook.checkIn();
+            unavailableBook.checkIn(core);
             assertEquals("Thank you for returning the book.", outContent.toString().trim());
+        } catch (InvalidCheckinException ex) {
+            fail();
         }
+    }
+
+    @Test
+    public void testReturnBookError() {
+        try {
+            Book availableBook = core.getBooks()[2];
+            availableBook.checkIn(core);
+            fail();
+        } catch (InvalidCheckinException ex) {
+
+        }
+    }
 }
+
+//        @Test
+//        public void testReturnBookCheckinErrorMessage() {
+//            Book availableBook = core.getBooks()[1];
+//            availableBook.checkIn();
+//            assertEquals("That is not a valid book to return.", outContent.toString().trim());
+//        }
+

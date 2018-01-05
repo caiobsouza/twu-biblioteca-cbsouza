@@ -1,7 +1,9 @@
 package com.twu.biblioteca.entity;
 
+import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.Messages;
+import com.twu.biblioteca.util.exceptions.InvalidCheckinException;
 
 public class Book {
     private String title;
@@ -57,8 +59,12 @@ public class Book {
         this.isAvailable = available;
     }
 
-    public void checkIn() {
+    public void checkIn(BibliotecaCore core) throws InvalidCheckinException {
         setIsAvailable(true);
+
+//        if(!core.hasBookInCollection(this))
+//            throw new InvalidCheckinException();
+
         ConsoleHelper.showMessage(Messages.getSuccessCheckinMessage());
     }
 }
