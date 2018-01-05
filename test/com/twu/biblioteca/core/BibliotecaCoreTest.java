@@ -79,7 +79,7 @@ public class BibliotecaCoreTest {
 
         Book book = core.findBookByName(bookName);
         assertNotNull(book);
-        assertEquals(book, book.getTitle());
+        assertEquals(bookName, book.getTitle());
     }
 
 }

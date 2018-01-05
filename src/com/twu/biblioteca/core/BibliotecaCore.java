@@ -29,6 +29,6 @@ public class BibliotecaCore {
     }
 
     public Book findBookByName(String bookName) {
-        return null;
+        return Arrays.stream(this.books).filter(book -> book.getTitle().equals(bookName)).findFirst().get();
     }
 }
