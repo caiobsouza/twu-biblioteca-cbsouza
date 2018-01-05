@@ -62,7 +62,7 @@ public class BibliotecaCoreTest {
         Book[] availableBooks = core.getAvailableBooks();
 
         for (Book book : availableBooks) {
-            if(!book.getIsAvailable())
+            if (!book.getIsAvailable())
                 fail();
         }
     }
@@ -90,5 +90,11 @@ public class BibliotecaCoreTest {
         assertEquals("That book is not available.", outContent.toString().trim());
     }
 
+    @Test
+    public void testReturnBook() {
+        Book unavailableBook = core.getBooks()[2];
+        unavailableBook.checkIn();
+        assertTrue(unavailableBook.getIsAvailable());
+    }
 
 }
