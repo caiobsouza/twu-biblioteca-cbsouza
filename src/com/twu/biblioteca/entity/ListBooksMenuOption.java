@@ -17,7 +17,7 @@ public class ListBooksMenuOption extends MenuOption {
     public void action() {
         ConsoleHelper.showMessage(Messages.getBooksHeaderMessage());
 
-        MenuOption[] options = factoryBookMenuOptions(core.getBooks());
+        MenuOption[] options = factoryBookMenuOptions(core.getAvailableBooks());
         showSubMenu(options);
     }
 
