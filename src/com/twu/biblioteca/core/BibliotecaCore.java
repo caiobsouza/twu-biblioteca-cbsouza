@@ -4,6 +4,7 @@ import com.twu.biblioteca.entity.Book;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Optional;
 
 public class BibliotecaCore {
     private Book[] books;
@@ -29,6 +30,7 @@ public class BibliotecaCore {
     }
 
     public Book findBookByName(String bookName) {
-        return Arrays.stream(this.books).filter(book -> book.getTitle().equals(bookName)).findFirst().get();
+        Book[] books = Arrays.stream(this.books).filter(book -> book.getTitle().equals(bookName)).toArray(Book[]::new);
+        return (books == null || books.length <= 0) ? null : books[0];
     }
 }
