@@ -40,7 +40,14 @@ public class Movie {
         return this.isAvailable;
     }
 
-    public void checkout() {
-        this.isAvailable = false;
+    public void setAvailable(boolean available) {
+        this.isAvailable = available;
     }
+
+    public void checkout() {
+        setAvailable(false);
+    }
+
+
+
 }
