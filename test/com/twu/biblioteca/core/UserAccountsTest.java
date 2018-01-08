@@ -13,8 +13,8 @@ public class UserAccountsTest {
     @Before
     public void setUp() {
         User[] users = {
-                new User("001-1000", "cbsouza"),
-                new User("002-2000", "idamasce")
+                new User("001-1000", "cbsouza", "Caio", "cbsouza@thoughtworks.com","988880000"),
+                new User("002-2000", "idamasce", "Isabelly","idamasce@thoughtworks.com", "977771111")
         };
 
         this.userAccounts = new UserAccounts(users);
