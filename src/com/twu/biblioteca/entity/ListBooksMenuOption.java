@@ -26,10 +26,10 @@ public class ListBooksMenuOption extends MenuOption {
         MenuOption[] options = new MenuOption[books.length + 1];
 
         for (int i = 0; i < books.length && books[i].getIsAvailable(); i++) {
-            options[i] = new BookItemMenuOption(generateLabel(i, books[i]), books[i]);
+            options[i] = new BookItemMenuOption(generateLabel(i, books[i]), books[i], core);
         }
 
-        options[books.length] = new QuitMenuOption(String.format("%d. Quit", books.length + 1));
+        options[books.length] = new BackMenuOption(String.format("%d. Back", books.length + 1), core);
 
         return options;
     }

@@ -3,12 +3,13 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.entity.*;
 import com.twu.biblioteca.util.ConsoleHelper;
+import com.twu.biblioteca.util.MainMenu;
 import com.twu.biblioteca.util.Menu;
 
 public class BibliotecaApp {
 
     private BibliotecaCore core;
-    private Menu menu;
+    private Menu mainMenu;
 
     public BibliotecaApp() {
         this.core = new BibliotecaCore(new Book[]
@@ -30,17 +31,12 @@ public class BibliotecaApp {
     }
 
     public void showMainMenu() {
-        menu = new Menu(new MenuOption[]{
-                new ListBooksMenuOption("1. List Books", core),
-                new ReturnBookMenuOption("2. Return Book", core),
-                new QuitMenuOption("3. Quit")
-        });
-
-        menu.show();
+        mainMenu = new MainMenu(core);
+        mainMenu.show();
     }
 
     public void readChoice() {
-        ConsoleHelper.requestUserChoice(menu);
+        ConsoleHelper.requestUserChoice(mainMenu);
     }
 
 

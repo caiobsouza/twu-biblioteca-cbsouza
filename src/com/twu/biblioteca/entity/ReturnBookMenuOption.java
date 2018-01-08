@@ -2,6 +2,7 @@ package com.twu.biblioteca.entity;
 
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.util.ConsoleHelper;
+import com.twu.biblioteca.util.MainMenu;
 import com.twu.biblioteca.util.Messages;
 import com.twu.biblioteca.util.exceptions.InvalidCheckinException;
 
@@ -26,6 +27,9 @@ public class ReturnBookMenuOption extends MenuOption {
         }
         try {
             book.checkIn(core);
+            MainMenu mainMenu = new MainMenu(core);
+            mainMenu.show();
+            ConsoleHelper.requestUserChoice(mainMenu);
         } catch (InvalidCheckinException ex) {
             ConsoleHelper.showMessage(Messages.getErrorCheckinMessage());
             action();
