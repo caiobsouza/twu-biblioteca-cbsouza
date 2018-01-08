@@ -18,7 +18,7 @@ public class User {
         this.libraryNumber = libraryNumber;
     }
 
-    public boolean checkPassword(String cbsouza) {
-        return (this.password.equals(cbsouza));
+    public boolean checkPassword(String password) {
+        return (this.password.equals(password));
     }
 }
