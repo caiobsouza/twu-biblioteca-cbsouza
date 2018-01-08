@@ -12,7 +12,12 @@ public class BibliotecaCore {
     private Movie[] movies;
 
     public BibliotecaCore(Book[] books) {
+        this(books, null);
+    }
+
+    public BibliotecaCore(Book[] books, Movie[] movies) {
         this.setBooks(books);
+        this.setMovies(movies);
     }
 
     public void setBooks(Book[] books) {
@@ -38,5 +43,9 @@ public class BibliotecaCore {
 
     public Movie[] getMovies() {
         return movies;
+    }
+
+    public void setMovies(Movie[] movies) {
+        this.movies = movies;
     }
 }

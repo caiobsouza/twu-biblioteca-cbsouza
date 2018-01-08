@@ -17,8 +17,12 @@ public class MovieTest {
     @Before
     public void setUp() {
         Book[] books = new Book[0];
+        Movie[] movies = {
+                new Movie(),
+                new Movie()
+        };
 
-        this.core = new BibliotecaCore(books);
+        this.core = new BibliotecaCore(books, movies);
 
         System.setOut(new PrintStream(outContent));
     }
