@@ -13,8 +13,8 @@ public class UserAccountsTest {
     @Before
     public void setUp() {
         User[] users = {
-                new User(),
-                new User()
+                new User("001-1000", "cbsouza"),
+                new User("002-2000", "idamasce")
         };
 
         this.userAccounts = new UserAccounts(users);
@@ -28,7 +28,7 @@ public class UserAccountsTest {
         assertTrue((0 < users.length));
 
         for (User user : users) {
-            assertNotNull(user.getUsername());
+            assertNotNull(user.getLibraryNumber());
         }
     }
 

@@ -2,13 +2,19 @@ package com.twu.biblioteca.entity;
 
 public class User {
 
-    private String username;
+    private String libraryNumber;
+    private String password;
 
-    public String getUsername() {
-        return this.username;
+    public User(String libraryNumber, String password) {
+        this.libraryNumber = libraryNumber;
+        this.password = password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getLibraryNumber() {
+        return this.libraryNumber;
+    }
+
+    public void setLibraryNumber(String libraryNumber) {
+        this.libraryNumber = libraryNumber;
     }
 }
