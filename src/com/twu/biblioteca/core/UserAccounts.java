@@ -27,4 +27,7 @@ public class UserAccounts {
     }
 
 
+    public boolean login(String libraryNumber, String password) {
+        return false;
+    }
 }

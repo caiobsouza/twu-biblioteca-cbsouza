@@ -34,12 +34,20 @@ public class UserAccountsTest {
 
     @Test
     public void testUserExists(){
-
         final String USER_WHO_EXISTS = "001-1000";
         final String USER_WHO_NOT_EXISTS = "666-6666";
 
         assertTrue(userAccounts.userExists(USER_WHO_EXISTS));
         assertFalse(userAccounts.userExists(USER_WHO_NOT_EXISTS));
+    }
+
+    @Test
+    public void testSuccessfulLogin(){
+        String libraryNumber = "001-0001";
+        String password = "cbsouza";
+
+        boolean hasSuccess = userAccounts.login(libraryNumber, password);
+        assertTrue(hasSuccess);
     }
 
 }
