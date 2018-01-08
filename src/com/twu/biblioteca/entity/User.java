@@ -4,20 +4,16 @@ public class User {
 
     private String libraryNumber;
     private String password;
-    private String name;
-    private String email;
-    private String phone;
+    private ProfileInfo profileInfo;
 
     public User(String libraryNumber, String password) {
-        this(libraryNumber, password, null, null, null);
+        this(libraryNumber, password, null);
     }
 
-    public User(String libraryNumber, String password, String name, String email, String phone) {
+    public User(String libraryNumber, String password, ProfileInfo profileInfo) {
         this.libraryNumber = libraryNumber;
         this.password = password;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+        this.profileInfo = profileInfo;
     }
 
     public String getLibraryNumber() {
@@ -32,27 +28,7 @@ public class User {
         return (this.password.equals(password));
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public ProfileInfo getProfileInfo() {
+        return this.profileInfo;
     }
 }

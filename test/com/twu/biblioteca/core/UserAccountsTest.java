@@ -1,5 +1,6 @@
 package com.twu.biblioteca.core;
 
+import com.twu.biblioteca.entity.ProfileInfo;
 import com.twu.biblioteca.entity.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,8 +14,8 @@ public class UserAccountsTest {
     @Before
     public void setUp() {
         User[] users = {
-                new User("001-1000", "cbsouza", "Caio", "cbsouza@thoughtworks.com","988880000"),
-                new User("002-2000", "idamasce", "Isabelly","idamasce@thoughtworks.com", "977771111")
+                new User("001-1000", "cbsouza", new ProfileInfo("Caio", "cbsouza@thoughtworks.com","988880000")),
+                new User("002-2000", "idamasce", new ProfileInfo("Isabelly","idamasce@thoughtworks.com", "977771111"))
         };
 
         this.userAccounts = new UserAccounts(users);
