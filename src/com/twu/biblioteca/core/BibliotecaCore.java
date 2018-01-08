@@ -1,6 +1,7 @@
 package com.twu.biblioteca.core;
 
 import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.entity.Movie;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Optional;
 
 public class BibliotecaCore {
     private Book[] books;
+    private Movie[] movies;
 
     public BibliotecaCore(Book[] books) {
         this.setBooks(books);
@@ -32,5 +34,9 @@ public class BibliotecaCore {
     public Book findBookByName(String bookName) {
         Book[] books = Arrays.stream(this.books).filter(book -> book.getTitle().equals(bookName)).toArray(Book[]::new);
         return (books == null || books.length <= 0) ? null : books[0];
+    }
+
+    public Movie[] getMovies() {
+        return movies;
     }
 }
