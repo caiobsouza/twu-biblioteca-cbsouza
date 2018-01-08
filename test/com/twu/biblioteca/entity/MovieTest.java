@@ -4,6 +4,7 @@ import com.twu.biblioteca.core.BibliotecaCore;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
@@ -33,10 +34,22 @@ public class MovieTest {
     }
 
     @Test
-    public void testListMovies(){
+    public void testListMovies() {
         Movie[] movies = core.getMovies();
 
         assertNotNull(movies);
         assertTrue(movies.length > 0);
+    }
+
+    @Test
+    public void testMovieHasDetails() {
+        Movie[] movies = core.getMovies();
+
+        for (Movie movie : movies) {
+            assertNotNull(movie.getName());
+            assertNotNull(movie.getDirector());
+            assertTrue((movie.year() > 0));
+            assertTrue((movie.getRating() > 0));
+        }
     }
 }
