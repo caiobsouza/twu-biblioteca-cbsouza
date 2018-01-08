@@ -17,4 +17,8 @@ public class User {
     public void setLibraryNumber(String libraryNumber) {
         this.libraryNumber = libraryNumber;
     }
+
+    public boolean checkPassword(String cbsouza) {
+        return false;
+    }
 }

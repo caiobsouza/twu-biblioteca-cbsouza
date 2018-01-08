@@ -21,7 +21,7 @@ public class UserAccountsTest {
     }
 
     @Test
-    public void listUsers() {
+    public void testlistUsers() {
         User[] users = userAccounts.getUsers();
 
         assertNotNull(users);
@@ -30,6 +30,12 @@ public class UserAccountsTest {
         for (User user : users) {
             assertNotNull(user.getLibraryNumber());
         }
+    }
+
+    @Test
+    public void testCheckUserPassword(){
+        User user = new User("001-0001", "cbsouza");
+        assertTrue(user.checkPassword("cbsouza"));
     }
 
 }
