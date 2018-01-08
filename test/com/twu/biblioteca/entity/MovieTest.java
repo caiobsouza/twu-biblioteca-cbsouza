@@ -19,8 +19,8 @@ public class MovieTest {
     public void setUp() {
         Book[] books = new Book[0];
         Movie[] movies = {
-                new Movie(),
-                new Movie()
+                new Movie("Star Wars: The Last Jedi", 2017, "Rian Johnson", 8),
+                new Movie("Justice League", 2017, "Zack Snyder", 7)
         };
 
         this.core = new BibliotecaCore(books, movies);

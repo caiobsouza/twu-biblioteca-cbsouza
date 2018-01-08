@@ -7,6 +7,13 @@ public class Movie {
     private String name;
     private int rating;
 
+    protected Movie(String name, int year, String director, int rating) {
+        this.name = name;
+        this.year = year;
+        this.director = director;
+        this.rating = rating;
+    }
+
     public String getName() {
         return this.name;
     }
