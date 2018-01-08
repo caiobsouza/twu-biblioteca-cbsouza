@@ -17,7 +17,14 @@ public class UserAccounts {
     }
 
     public boolean userExists(String libraryNumber) {
-        User[] result = Arrays.stream(users).filter(user -> user.getLibraryNumber().equals(libraryNumber)).toArray(User[]::new);
-        return (null != result && result.length > 0);
+        User user = findUserByLibraryNumber(libraryNumber);
+        return (null != user);
     }
+
+    public User findUserByLibraryNumber(String libraryNumber) {
+        User[] usersFound = Arrays.stream(users).filter(user -> user.getLibraryNumber().equals(libraryNumber)).toArray(User[]::new);
+        return (null != usersFound && usersFound.length > 0 ? usersFound[0] : null);
+    }
+
+
 }
