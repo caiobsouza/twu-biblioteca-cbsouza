@@ -53,7 +53,7 @@ public class UserAccountsTest {
     @Test
     public void testUnauthorizedLogin(){
         String libraryNumber = "001-1000";
-        String password = "cbsouza";
+        String password = "aaaaaaa";
 
         boolean hasSuccess = userAccounts.login(libraryNumber, password);
         assertTrue(!hasSuccess);
