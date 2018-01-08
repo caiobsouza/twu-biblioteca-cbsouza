@@ -2,8 +2,8 @@ package com.twu.biblioteca.util;
 
 import com.twu.biblioteca.core.BibliotecaCore;
 import com.twu.biblioteca.entity.Book;
-import com.twu.biblioteca.entity.ListBooksMenuOption;
-import com.twu.biblioteca.entity.MenuOption;
+import com.twu.biblioteca.entity.menu.ListBooksMenuOption;
+import com.twu.biblioteca.entity.menu.MenuOption;
 
 import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 import org.junit.After;

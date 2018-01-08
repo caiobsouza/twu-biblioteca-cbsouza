@@ -1,6 +1,8 @@
-package com.twu.biblioteca.entity;
+package com.twu.biblioteca.entity.menu;
 
 import com.twu.biblioteca.core.BibliotecaCore;
+import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.entity.menu.MenuOption;
 import com.twu.biblioteca.util.ConsoleHelper;
 import com.twu.biblioteca.util.MainMenu;
 import com.twu.biblioteca.util.Messages;

@@ -1,4 +1,4 @@
-package com.twu.biblioteca.entity;
+package com.twu.biblioteca.entity.menu;
 
 public abstract class MenuOption {
     private String label;

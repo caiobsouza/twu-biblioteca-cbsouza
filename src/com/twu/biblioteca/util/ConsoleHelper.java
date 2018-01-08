@@ -1,6 +1,6 @@
 package com.twu.biblioteca.util;
 
-import com.twu.biblioteca.entity.MenuOption;
+import com.twu.biblioteca.entity.menu.MenuOption;
 import com.twu.biblioteca.util.exceptions.InvalidMenuOptionException;
 
 import java.util.Scanner;
