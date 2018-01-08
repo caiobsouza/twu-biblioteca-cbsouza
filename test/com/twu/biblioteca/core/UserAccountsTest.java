@@ -43,7 +43,7 @@ public class UserAccountsTest {
 
     @Test
     public void testSuccessfulLogin(){
-        String libraryNumber = "001-0001";
+        String libraryNumber = "001-1000";
         String password = "cbsouza";
 
         boolean hasSuccess = userAccounts.login(libraryNumber, password);

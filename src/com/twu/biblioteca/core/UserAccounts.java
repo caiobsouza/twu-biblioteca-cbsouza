@@ -26,8 +26,11 @@ public class UserAccounts {
         return (null != usersFound && usersFound.length > 0 ? usersFound[0] : null);
     }
 
-
     public boolean login(String libraryNumber, String password) {
-        return false;
+        if(!userExists(libraryNumber))
+            return false;
+
+        User user = findUserByLibraryNumber(libraryNumber);
+        return user.checkPassword(password);
     }
 }
