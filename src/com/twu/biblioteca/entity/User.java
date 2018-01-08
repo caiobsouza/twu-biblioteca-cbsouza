@@ -19,6 +19,6 @@ public class User {
     }
 
     public boolean checkPassword(String cbsouza) {
-        return false;
+        return (this.password.equals(cbsouza));
     }
 }
