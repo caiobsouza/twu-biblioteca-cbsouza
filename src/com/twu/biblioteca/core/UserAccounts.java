@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class UserAccounts {
 
     private User[] users;
+    private User currentUser;
 
     public UserAccounts(User[] users) {
         this.users = users;
@@ -27,14 +28,24 @@ public class UserAccounts {
     }
 
     public boolean login(String libraryNumber, String password) {
-        if(!userExists(libraryNumber))
+        if (!userExists(libraryNumber))
             return false;
 
         User user = findUserByLibraryNumber(libraryNumber);
-        return user.checkPassword(password);
+
+        if (!user.checkPassword(password))
+            return false;
+
+        setCurrentUser(user);
+        return true;
+
     }
 
     public User getCurrentUser() {
-        return new User("","");
+        return this.currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 }
