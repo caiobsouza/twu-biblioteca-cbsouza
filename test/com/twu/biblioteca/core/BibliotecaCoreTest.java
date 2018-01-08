@@ -2,6 +2,7 @@ package com.twu.biblioteca.core;
 
 import com.twu.biblioteca.entity.Book;
 
+import com.twu.biblioteca.entity.Movie;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,6 +64,16 @@ public class BibliotecaCoreTest {
 
         for (Book book : availableBooks) {
             if (!book.getIsAvailable())
+                fail();
+        }
+    }
+
+    @Test
+    public void testListAvailableMovies(){
+        Movie[] availableMovies = core.getAvailableMovies();
+
+        for (Movie movie : availableMovies) {
+            if (!movie.getIsAvailable())
                 fail();
         }
     }

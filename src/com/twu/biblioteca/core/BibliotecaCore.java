@@ -46,4 +46,8 @@ public class BibliotecaCore {
     public void setMovies(Movie[] movies) {
         this.movies = movies;
     }
+
+    public Movie[] getAvailableMovies() {
+        return this.movies;
+    }
 }
