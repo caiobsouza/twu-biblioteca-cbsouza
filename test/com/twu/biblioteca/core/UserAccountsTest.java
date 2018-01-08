@@ -50,4 +50,13 @@ public class UserAccountsTest {
         assertTrue(hasSuccess);
     }
 
+    @Test
+    public void testUnauthorizedLogin(){
+        String libraryNumber = "001-1000";
+        String password = "cbsouza";
+
+        boolean hasSuccess = userAccounts.login(libraryNumber, password);
+        assertTrue(!hasSuccess);
+    }
+
 }
