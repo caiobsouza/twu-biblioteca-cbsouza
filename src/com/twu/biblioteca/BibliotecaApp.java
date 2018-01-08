@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.core.BibliotecaCore;
+import com.twu.biblioteca.core.UserAccounts;
 import com.twu.biblioteca.entity.*;
 import com.twu.biblioteca.util.*;
 
@@ -21,11 +22,17 @@ public class BibliotecaApp {
                 new Book("Head First Java", "Clark Kent", 2004, true)
         };
 
-        this.core = new BibliotecaCore(books, movies);
+        User[] users = {
+                new User("001-1000", "cbsouza", new ProfileInfo("Caio", "cbsouza@thoughtworks.com","988880000")),
+                new User("002-2000", "idamasce", new ProfileInfo("Isabelly","idamasce@thoughtworks.com", "977771111"))
+        };
+
+        this.core = new BibliotecaCore(books, movies, new UserAccounts(users));
     }
 
     public static void main(String[] args) {
         BibliotecaApp app = new BibliotecaApp();
+        app.signIn();
         app.welcomeUser();
         app.showMainMenu();
         app.readChoice();
@@ -42,6 +49,16 @@ public class BibliotecaApp {
 
     public void readChoice() {
         ConsoleHelper.requestUserChoice(mainMenu);
+    }
+
+    public void signIn(){
+        String libraryNumber = ConsoleHelper.getUserStringInput("Library Number: ");
+        String password = ConsoleHelper.getUserStringInput("Password: ");
+
+        if(!core.getUserAccounts().login(libraryNumber, password)) {
+            ConsoleHelper.showMessage("Username or password incorrect");
+            signIn();
+        }
     }
 
 

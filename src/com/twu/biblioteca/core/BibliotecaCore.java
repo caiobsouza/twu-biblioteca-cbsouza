@@ -8,14 +8,20 @@ import java.util.Arrays;
 public class BibliotecaCore {
     private Book[] books;
     private Movie[] movies;
+    private UserAccounts userAccounts;
 
     public BibliotecaCore(Book[] books) {
-        this(books, null);
+        this(books, null, null);
     }
 
     public BibliotecaCore(Book[] books, Movie[] movies) {
-        this.setBooks(books);
-        this.setMovies(movies);
+        this(books, movies, null);
+    }
+
+    public BibliotecaCore(Book[] books, Movie[] movies, UserAccounts userAccounts) {
+        this.books = books;
+        this.movies = movies;
+        this.userAccounts = userAccounts;
     }
 
     public void setBooks(Book[] books) {
@@ -49,5 +55,9 @@ public class BibliotecaCore {
 
     public Movie[] getAvailableMovies() {
         return Arrays.stream(this.movies).filter(Movie::getIsAvailable).toArray(Movie[]::new);
+    }
+
+    public UserAccounts getUserAccounts() {
+        return this.userAccounts;
     }
 }
