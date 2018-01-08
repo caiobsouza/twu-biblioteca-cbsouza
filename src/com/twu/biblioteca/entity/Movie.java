@@ -17,6 +17,7 @@ public class Movie {
         this.year = year;
         this.director = director;
         this.rating = rating;
+        this.isAvailable = isAvailable;
     }
 
     public String getName() {
@@ -40,6 +41,6 @@ public class Movie {
     }
 
     public void checkout() {
-
+        this.isAvailable = false;
     }
 }
