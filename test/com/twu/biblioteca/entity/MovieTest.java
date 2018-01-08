@@ -2,6 +2,7 @@ package com.twu.biblioteca.entity;
 
 import com.twu.biblioteca.core.BibliotecaCore;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -55,5 +56,14 @@ public class MovieTest {
         assertEquals("Rian Johnson", movie.getDirector());
         assertEquals(2017, movie.getYear());
         assertEquals(8, movie.getRating());
+    }
+
+    @Test
+    public void testMovieCheckout(){
+        Movie movie = core.getMovies()[0];
+
+        assertTrue(movie.getIsAvailable());
+        movie.checkout();
+        assertFalse(movie.getIsAvailable());
     }
 }
