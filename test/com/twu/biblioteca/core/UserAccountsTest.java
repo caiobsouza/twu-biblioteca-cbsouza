@@ -59,4 +59,13 @@ public class UserAccountsTest {
         assertTrue(!hasSuccess);
     }
 
+    @Test
+    public void testStoreCurrentUser(){
+        String libraryNumber = "001-1000";
+        String password = "cbsouza";
+
+        userAccounts.login(libraryNumber, password);
+        assertEquals(libraryNumber, userAccounts.getCurrentUser().getLibraryNumber());
+    }
+
 }

@@ -33,4 +33,8 @@ public class UserAccounts {
         User user = findUserByLibraryNumber(libraryNumber);
         return user.checkPassword(password);
     }
+
+    public User getCurrentUser() {
+        return new User("","");
+    }
 }
