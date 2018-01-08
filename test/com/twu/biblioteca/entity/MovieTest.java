@@ -52,4 +52,14 @@ public class MovieTest {
             assertTrue((movie.getRating() > 0));
         }
     }
+
+    @Test
+    public void testMovieDetailsGetters() {
+        Movie movie = core.getMovies()[0];
+
+        assertEquals("Star Wars: The Last Jedi", movie.getName());
+        assertEquals("Rian Johnson",movie.getDirector());
+        assertEquals(2017, movie.getYear());
+        assertEquals(8, movie.getRating());
+    }
 }
