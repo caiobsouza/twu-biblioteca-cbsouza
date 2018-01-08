@@ -38,7 +38,6 @@ public class UserAccounts {
 
         setCurrentUser(user);
         return true;
-
     }
 
     public User getCurrentUser() {
