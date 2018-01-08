@@ -8,11 +8,11 @@ public class Movie {
     private int rating;
     private boolean isAvailable;
 
-    protected Movie(String name, int year, String director, int rating) {
+    public Movie(String name, int year, String director, int rating) {
         this(name, year, director, rating, true);
     }
 
-    protected Movie(String name, int year, String director, int rating, boolean isAvailable) {
+    public Movie(String name, int year, String director, int rating, boolean isAvailable) {
         this.name = name;
         this.year = year;
         this.director = director;
