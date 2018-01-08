@@ -7,13 +7,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 public class MovieTest {
 
     private BibliotecaCore core;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void setUp() {
@@ -24,8 +20,6 @@ public class MovieTest {
         };
 
         this.core = new BibliotecaCore(books, movies);
-
-        System.setOut(new PrintStream(outContent));
     }
 
     @After
@@ -38,7 +32,7 @@ public class MovieTest {
         Movie[] movies = core.getMovies();
 
         assertNotNull(movies);
-        assertTrue(movies.length > 0);
+        assertTrue(0 < movies.length);
     }
 
     @Test
@@ -48,8 +42,8 @@ public class MovieTest {
         for (Movie movie : movies) {
             assertNotNull(movie.getName());
             assertNotNull(movie.getDirector());
-            assertTrue((movie.getYear() > 0));
-            assertTrue((movie.getRating() > 0));
+            assertTrue((0 < movie.getYear()));
+            assertTrue((0 < movie.getRating()));
         }
     }
 
@@ -58,7 +52,7 @@ public class MovieTest {
         Movie movie = core.getMovies()[0];
 
         assertEquals("Star Wars: The Last Jedi", movie.getName());
-        assertEquals("Rian Johnson",movie.getDirector());
+        assertEquals("Rian Johnson", movie.getDirector());
         assertEquals(2017, movie.getYear());
         assertEquals(8, movie.getRating());
     }
