@@ -6,8 +6,8 @@ public class UserAccounts {
 
     private User[] users;
 
-    public UserAccounts(){
-
+    public UserAccounts(User[] users){
+        this.users = users;
     }
 
     public User[] getUsers() {
