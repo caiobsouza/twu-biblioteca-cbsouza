@@ -16,7 +16,7 @@ public class ListMoviesMenuOption extends MenuOption {
 
     @Override
     public void action() {
-        MenuOption[] options = factoryBookMenuOptions(core.getMovies());
+        MenuOption[] options = factoryBookMenuOptions(core.getAvailableMovies());
         showSubMenu(options);
     }
 

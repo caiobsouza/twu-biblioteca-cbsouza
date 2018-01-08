@@ -20,15 +20,21 @@ public class BibliotecaCoreTest {
 
     @Before
     public void setUp() {
-        Book[] mock = new Book[]
+        Book[] books = new Book[]
                 {
                         new Book("Test-Driven Development", "Kent Beck", 2000, true),
                         new Book("Head First Java", "Clark Kent", 2004, true),
                         new Book("Java Hot To Program", "Deitel", 2010, false)
                 };
 
-        this.booksCount = mock.length;
-        this.core = new BibliotecaCore(mock);
+        Movie[] movies = {
+                new Movie("Star Wars: The Last Jedi", 2017, "Rian Johnson", 8, true),
+                new Movie("Justice League", 2017, "Zack Snyder", 7, true),
+                new Movie("Rogue One: A Star Wars Story", 2016, "Gareth Edwards", 8, false)
+        };
+
+        this.booksCount = books.length;
+        this.core = new BibliotecaCore(books, movies);
 
         System.setOut(new PrintStream(outContent));
     }

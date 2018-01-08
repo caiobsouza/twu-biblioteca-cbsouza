@@ -48,6 +48,6 @@ public class BibliotecaCore {
     }
 
     public Movie[] getAvailableMovies() {
-        return this.movies;
+        return Arrays.stream(this.movies).filter(Movie::getIsAvailable).toArray(Movie[]::new);
     }
 }
