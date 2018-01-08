@@ -2,10 +2,12 @@ package com.twu.biblioteca.entity;
 
 public class Movie {
 
-    private int year;
-    private String director;
     private String name;
+    private String director;
+    private int year;
     private int rating;
+
+
 
     protected Movie(String name, int year, String director, int rating) {
         this.name = name;
@@ -22,7 +24,7 @@ public class Movie {
         return this.director;
     }
 
-    public int year() {
+    public int getYear() {
         return this.year;
     }
 

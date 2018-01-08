@@ -48,7 +48,7 @@ public class MovieTest {
         for (Movie movie : movies) {
             assertNotNull(movie.getName());
             assertNotNull(movie.getDirector());
-            assertTrue((movie.year() > 0));
+            assertTrue((movie.getYear() > 0));
             assertTrue((movie.getRating() > 0));
         }
     }
